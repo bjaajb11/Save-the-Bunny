@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour
     private bool _isGameOver;
     private int _score;
     [SerializeField] private Text _scoreText;
+    [SerializeField] private GameObject _gameOverPanel;
     public static GameManager Instance { get; private set; }
+    public int Score => _score;
 
     public void SetGameOver()
     {
-        _isGameOver = true;
+        _isGameOver = true;        
+        _gameOverPanel.SetActive(true);
         _enemySpawner.StopSpawning();
     }
 
