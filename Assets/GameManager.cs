@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private EnemySpawner _enemySpawner;
     private bool _isGameOver;
     private int _score;
+    [SerializeField] private Text _scoreText;
     public static GameManager Instance { get; private set; }
 
     public void SetGameOver()
@@ -17,8 +19,14 @@ public class GameManager : MonoBehaviour
     {
         if (_isGameOver) return;
 
-        _score += points;
-        print($"Current Score: {_score}");
+        SetScore(_score + points);
+    }
+
+    private void SetScore(int score)
+    {
+        _score = score;
+        print($"Current Score: {score}");
+        _scoreText.text = score.ToString();
     }
 
     private void Awake()
@@ -29,5 +37,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+        SetScore(0);
     }
 }
