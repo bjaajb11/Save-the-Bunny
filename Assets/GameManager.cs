@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -7,7 +8,7 @@ public class GameManager : MonoBehaviour
     private bool _isGameOver;
     private int _score;
     [SerializeField] private Text _scoreText;
-    [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameOver _gameOverPanel;
     [SerializeField] private GameObject _playerPrefab;
     [SerializeField] private Transform _playerSpawnPoint;
     public static GameManager Instance { get; private set; }
@@ -16,7 +17,8 @@ public class GameManager : MonoBehaviour
     public void SetGameOver()
     {
         _isGameOver = true;        
-        _gameOverPanel.SetActive(true);
+        _gameOverPanel.gameObject.SetActive(true);
+        _gameOverPanel.SetScore(_score);
         _enemySpawner.StopSpawning();
     }
 
@@ -50,7 +52,13 @@ public class GameManager : MonoBehaviour
         _isGameOver = false;
         Instantiate(_playerPrefab, _playerSpawnPoint.position, Quaternion.identity);
         SetScore(0);
-        _gameOverPanel.SetActive(false);
+        _gameOverPanel.gameObject.SetActive(false);
         _enemySpawner.StartSpawning();
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }   
+
 }

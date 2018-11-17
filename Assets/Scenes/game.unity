@@ -776,7 +776,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 928258115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1377970617}
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &928258115
@@ -964,8 +975,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 735510913}
-        m_MethodName: Restart
+      - m_Target: {fileID: 1377970617}
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1115,7 +1126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemySpawner: {fileID: 787901725}
   _scoreText: {fileID: 1083642461}
-  _gameOverPanel: {fileID: 735510909}
+  _gameOverPanel: {fileID: 735510913}
   _playerPrefab: {fileID: 1179626141695190, guid: 6ef59f896b9daed47910c9bebf0926a2,
     type: 2}
   _playerSpawnPoint: {fileID: 1661090117}

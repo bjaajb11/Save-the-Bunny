@@ -1,17 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
     [SerializeField] private Text _scoreText;
-
-    private void Start()
+  
+    public void SetScore(int score)
     {
-        _scoreText.text = $"Score: {GameManager.Instance.Score}";
+        _scoreText.text = $"Score: {score}";
     }
 
-    public void Restart()
-    {
-        GameManager.Instance.StartGame();
-    }
+  
 }
