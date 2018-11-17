@@ -613,7 +613,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1808043353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.49740505, y: 0.53716624, z: -0.0026940433}
+  m_LocalPosition: {x: -0.49740505, y: -0.56, z: -0.0026940433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1855618438}
@@ -710,6 +710,7 @@ GameObject:
   - component: {fileID: 1897448851}
   - component: {fileID: 1897448850}
   - component: {fileID: 1897448853}
+  - component: {fileID: 1897448854}
   m_Layer: 0
   m_Name: rabbit
   m_TagString: Untagged
@@ -790,7 +791,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1897448849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12427318, y: -2.081, z: 0}
+  m_LocalPosition: {x: -2.5, y: -3.181, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -821,3 +822,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.36, y: 1.3384511}
   m_EdgeRadius: 0
+--- !u!114 &1897448854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1897448849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6555c428cc8470408f2e20c215dc7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 5
+  _xConstraint: 2.5
