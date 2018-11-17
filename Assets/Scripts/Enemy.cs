@@ -17,10 +17,9 @@ public class Enemy : MonoBehaviour
             GameManager.Instance.SetGameOver();
             Destroy(other.gameObject);
         }
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            Instantiate(_dust, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        if (!other.gameObject.CompareTag("Ground")) return;
+        GameManager.Instance.AddScore(1);
+        Instantiate(_dust, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
