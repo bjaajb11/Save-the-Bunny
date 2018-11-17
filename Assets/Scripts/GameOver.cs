@@ -9,4 +9,9 @@ public class GameOver : MonoBehaviour
     {
         _scoreText.text = $"Score: {GameManager.Instance.Score}";
     }
+
+    public void Restart()
+    {
+        GameManager.Instance.StartGame();
+    }
 }

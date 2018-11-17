@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     private int _score;
     [SerializeField] private Text _scoreText;
     [SerializeField] private GameObject _gameOverPanel;
+    [SerializeField] private GameObject _playerPrefab;
+    [SerializeField] private Transform _playerSpawnPoint;
     public static GameManager Instance { get; private set; }
     public int Score => _score;
 
@@ -40,6 +42,15 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
+        StartGame();
+    }
+
+    public void StartGame()
+    {
+        _isGameOver = false;
+        Instantiate(_playerPrefab, _playerSpawnPoint.position, Quaternion.identity);
         SetScore(0);
+        _gameOverPanel.SetActive(false);
+        _enemySpawner.StartSpawning();
     }
 }

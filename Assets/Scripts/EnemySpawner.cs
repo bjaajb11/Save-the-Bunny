@@ -6,25 +6,20 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _horizontalLimits;
     [SerializeField] private float _spawnRate;
 
+    internal void StartSpawning()
+    {
+        InvokeRepeating(nameof(SpawnSpike), 1f, _spawnRate);
+    }
+
+    internal void StopSpawning()
+    {
+        CancelInvoke(nameof(SpawnSpike));
+    }
+
     private void SpawnSpike()
     {
         var position = transform.position;
         position.x = Random.Range(-_horizontalLimits, _horizontalLimits);
         Instantiate(_enemyPrefab, position, Quaternion.identity);
-    }
-
-    private void Start()
-    {
-        StartSpawning();
-    }
-
-    private void StartSpawning()
-    {
-        InvokeRepeating("SpawnSpike", 1f, _spawnRate);
-    }
-
-    public void StopSpawning()
-    {
-        CancelInvoke("SpawnSpike");
     }
 }
