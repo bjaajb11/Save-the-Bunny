@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _rotationSpeed;
-
+    [SerializeField] private GameObject _dust;
 	private void FixedUpdate () {
 	transform.Rotate(0, 0, _rotationSpeed);	
 	}
@@ -14,11 +14,12 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            GameManager.Instance.SetGameOver();
             Destroy(other.gameObject);
-            return;
         }
         if (other.gameObject.CompareTag("Ground"))
         {
+            Instantiate(_dust, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

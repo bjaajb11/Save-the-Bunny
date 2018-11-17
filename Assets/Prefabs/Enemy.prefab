@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 7
+  _dust: {fileID: 1539852666138414, guid: 426b97db714587d4c9dfabdb4af6959c, type: 2}
 --- !u!212 &212810031742691494
 SpriteRenderer:
   m_ObjectHideFlags: 1
